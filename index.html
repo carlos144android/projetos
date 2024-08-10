@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para Café</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+        }
+        #btn-sim, #btn-nao {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+        #btn-sim {
+            background-color: #007bff;
+        }
+        #btn-sim:hover {
+            background-color: #0056b3;
+        }
+        #btn-nao {
+            background-color: #dc3545;
+        }
+        #btn-nao:hover {
+            background-color: #c82333;
+        }
+        #flor {
+            display: none;
+            margin-top: 20px;
+            font-size: 50px;
+        }
+        #mensagem-triste {
+            display: none;
+            margin-top: 20px;
+            color: #dc3545;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>Gostaria de tomar um café comigo?</p>
+        <button id="btn-sim">Sim</button>
+        <button id="btn-nao">Não</button>
+        <div id="flor">🌸</div>
+        <div id="mensagem-triste">Ah, tudo bem. Não fale mais comigo então. 😢</div>
+    </div>
+
+    <script>
+        document.getElementById('btn-sim').addEventListener('click', function() {
+            document.getElementById('flor').style.display = 'block';
+            document.getElementById('mensagem-triste').style.display = 'none';
+        });
+
+        document.getElementById('btn-nao').addEventListener('click', function() {
+            document.getElementById('flor').style.display = 'none';
+            document.getElementById('mensagem-triste').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
