@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Tigrinho - Pegadinha</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            border: 2px dashed #888;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #tigrinho {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://via.placeholder.com/50?text=%F0%9F%90%AF');
+            background-size: cover;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="tigrinho"></div>
+</div>
+
+<script>
+    const tigrinho = document.getElementById("tigrinho");
+    const container = document.querySelector(".container");
+
+    function moverTigrinho() {
+        const larguraContainer = container.clientWidth;
+        const alturaContainer = container.clientHeight;
+        
+        const novaPosicaoX = Math.random() * (larguraContainer - tigrinho.clientWidth);
+        const novaPosicaoY = Math.random() * (alturaContainer - tigrinho.clientHeight);
+        
+        tigrinho.style.left = novaPosicaoX + "px";
+        tigrinho.style.top = novaPosicaoY + "px";
+    }
+
+    tigrinho.addEventListener("mouseenter", moverTigrinho);
+
+    tigrinho.addEventListener("click", () => {
+        alert("Você conseguiu clicar no tigrinho! Parabéns!");
+    });
+</script>
+
+</body>
+</html>
